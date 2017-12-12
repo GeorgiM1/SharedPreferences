@@ -35,13 +35,7 @@ public class Main2Activity extends AppCompatActivity {
         getName.setText(PreferencesMenager.getFirstName(this).toString());
         getLastname.setText(PreferencesMenager.getLastname(this).toString());
         getAge.setText(PreferencesMenager.getAge(this).toString());
-        if (PreferencesMenager.getSex(this)){
-          sex.setText("Male");
-
-        }else {
-            sex.setText("Female");
-
-        }
+       sex.setText(PreferencesMenager.getSex(this) ? "Male" : "Female");
 
     }
 }
