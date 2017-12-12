@@ -1,8 +1,8 @@
 package com.example.android.sharedpreferences;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.contBtn)
     Button contBtn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,15 +39,14 @@ public class MainActivity extends AppCompatActivity {
     }
     @OnClick(R.id.saveBtn)
     public void onBtnClick (View view){
-        PreferencesMenager.setFirstName(this, firstName.getText().toString());
-        PreferencesMenager.setLastname(this, lastname.getText().toString());
-        PreferencesMenager.setAge(this,age.getText().toString());
-        if (mBtn.isChecked()){
-            PreferencesMenager.setSex(this, true);
+    User user = new User();
+    user.setName(firstName.getText().toString());
+    user.setLastname(lastname.getText().toString());
+    user.setAge(age.getText().toString());
+    user.setMale(mBtn.isChecked());
+    PreferencesMenager.addUser(user,this);
 
-        } else if (fBtn.isChecked()){
-            PreferencesMenager.setSex(this, false);
-        }
+
         Toast.makeText(this, "saved", Toast.LENGTH_SHORT).show();
 
     }

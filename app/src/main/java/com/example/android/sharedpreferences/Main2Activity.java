@@ -1,7 +1,7 @@
 package com.example.android.sharedpreferences;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,13 +29,17 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         ButterKnife.bind(this);
     }
-    @OnClick (R.id.loadBtn)
-    public void onLoadClick (View view){
 
-        getName.setText(PreferencesMenager.getFirstName(this).toString());
-        getLastname.setText(PreferencesMenager.getLastname(this).toString());
-        getAge.setText(PreferencesMenager.getAge(this).toString());
-       sex.setText(PreferencesMenager.getSex(this) ? "Male" : "Female");
+    @OnClick(R.id.loadBtn)
+    public void onLoadClick(View view) {
+        User user = PreferencesMenager.getUser(this);
+
+
+        getName.setText(user.getName());
+        getLastname.setText(user.getLastname());
+        getAge.setText(user.getAge());
+        sex.setText(user.isMale ? "Male" : "Female");
+
 
     }
 }

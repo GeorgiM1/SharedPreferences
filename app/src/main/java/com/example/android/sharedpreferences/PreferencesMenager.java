@@ -47,7 +47,7 @@ public class PreferencesMenager {
     public static void  addUser(User shopModel, Context c){
         Gson gson = new Gson();
         String mapStrnig = gson.toJson(shopModel);
-        getPreferences(c).edit().putString("user", mapStrnig).notifyAll();
+        getPreferences(c).edit().putString("user", mapStrnig).apply();
     }
     public static  User getUser (Context context){
         //ListPrefs();
