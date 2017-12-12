@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.android.sharedpreferences.MainActivity">
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/husky"
+        android:layout_width="150dp"
+        android:layout_margin="20dp"
+        android:layout_height="150dp"
+        android:src="@drawable/husky_720"/>
+
+
+    <EditText
+        android:hint="Name"
+        android:layout_margin="6dp"
+        android:layout_below="@id/husky"
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:hint="Lastname"
+        android:layout_margin="6dp"
+        android:layout_below="@id/name"
+        android:id="@+id/lastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_below="@id/lastname"
+        android:id="@+id/age"
+        android:hint="Age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_below="@id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/fBtn"
+            android:text="F"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/mBtn"
+            android:text="M"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:text="@string/save_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radio"/>
+    <Button
+        android:layout_below="@id/saveBtn"
+        android:id="@+id/contBtn"
+        android:text="Continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
