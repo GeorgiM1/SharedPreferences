@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.google.gson.Gson;
+
 /**
  * Created by pc on 12/12/2017.
  */
@@ -40,5 +42,15 @@ public class PreferencesMenager {
     }
     public static void setSex (Context context, boolean b){
         getPreferences(context).edit().putBoolean("is checked", b).apply();
+    }
+
+    public static void  addUser(User shopModel, Context c){
+        Gson gson = new Gson();
+        String mapStrnig = gson.toJson(shopModel);
+        getPreferences(c).edit().putString("user", mapStrnig).notifyAll();
+    }
+    public static  User getUser (Context context){
+        //ListPrefs();
+        return  new Gson().fromJson(getPreferences(context).getString("user", ""), User.class);
     }
 }
